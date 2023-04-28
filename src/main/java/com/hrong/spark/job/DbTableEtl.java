@@ -1,4 +1,4 @@
-package com.hrong.job.etl;
+package com.hrong.spark.job;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

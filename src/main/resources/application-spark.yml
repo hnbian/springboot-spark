@@ -1,0 +1,4 @@
+spark:
+  master: yarn
+  driver:
+    name: n151

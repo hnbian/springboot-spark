@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import com.hrong.spark.job.DbTableEtl;
 
 /**
  * @Author hrong
@@ -41,6 +42,7 @@ public class SparkSubmitServiceImpl implements ISparkSubmitService {
 				.setConf("spark.driver.memory", sparkAppParams.getDriverMemory())
 				.setConf("spark.executor.memory", sparkAppParams.getExecutorMemory())
 				.setConf("spark.executor.cores", sparkAppParams.getExecutorCores());
+
 		if (confParams != null && confParams.size() != 0) {
 			log.info("开始设置spark job运行参数:{}", JSONObject.toJSONString(confParams));
 			for (Map.Entry<String, String> conf : confParams.entrySet()) {

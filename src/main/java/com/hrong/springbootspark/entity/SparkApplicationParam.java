@@ -32,6 +32,8 @@ public class SparkApplicationParam {
 	private String executorMemory;
 	@Value("${spark.executor.cores:1}")
 	private String executorCores;
+	@Value("${spark.dependency}")
+	private String dependency;
 	/**
 	 * 其他配置：传递给spark job的参数
 	 */
@@ -42,6 +44,6 @@ public class SparkApplicationParam {
 	 * @return SparkApplicationParam
 	 */
 	public SparkApplicationParam getSparkApplicationParam(){
-		return new SparkApplicationParam(mainClass, jarPath, master, deployMode, driverMemory, executorMemory, executorCores, otherConfParams);
+		return new SparkApplicationParam(mainClass, jarPath, master, deployMode, driverMemory, executorMemory, executorCores, dependency,otherConfParams);
 	}
 }
